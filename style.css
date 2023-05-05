@@ -22,6 +22,7 @@
     border-radius: 10px;
 }
 
+
 .todo-app h2{
     color: #002765;
     display: flex;
@@ -52,6 +53,7 @@ input{
     padding: 10px;
     font-weight: 14px;
 }
+
 
 button{
     border: none;
@@ -110,4 +112,45 @@ ul li span{
 
 ul li span:hover{
     background: #edeef0;
+}
+
+.toggle{
+    width: 3rem;
+    height: 3rem;
+    background-color: #eee8e1;
+    position: absolute;
+    top: 7rem;
+    right: 7em;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.toggle i{
+    font-size: 2rem;
+    color:   #777;
+}
+
+.container.dark{
+    background: #262626;
+}
+
+
+
+.container.dark.toggle{
+    background: #464646;
+}
+
+.container.dark.toggle i{
+    color: #4646;
+} 
+
+.container.dark.todo-app{
+    color: #ddd;
+    background: #262626;
+}
+
+.container.dark.row{
+    background: #262626;
 }

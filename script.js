@@ -1,5 +1,13 @@
 const inputBox = document.getElementById("input-box");
 const listContainer = document.getElementById("list-container");
+const Container = document.querySelector(".container");
+const toggle = document.querySelector(".toggle");
+
+toggle.addEventListener("click", () => {
+    Container.classList.toggle("dark")?(toggle.firstElementChild.className="far fa-moon"):
+    (toggle.firstElementChild.className="far fa-sun")
+});
+
 
 //code that will be contacted when the AddTask button is clicked
 function addTask(){
@@ -45,3 +53,33 @@ function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
 showTask();
+
+//to filter list
+const filterCheckbox = document.createElement('input');
+filterCheckbox.type = 'checkbox';
+
+div.appendChild(filterLabel);
+filterLabel.appendChild(filterCheckbox);
+Container.insertBefore(div, ul);
+
+filterCheckbox.addEventListener('change', (event) => {
+    const isChecked = event.target.checked;
+    const lis = ul.children;    
+
+    if(isChecked) {
+        for(var i = 0; i < lis.length; i++) {
+            var li = lis[i];
+
+            if(li.className == 'checked') {
+                li.style.display = '';  
+            } else {
+                li.style.display = 'none';
+            }
+        }
+    } else {
+        for(var i = 0; i < lis.length; i++) {
+            var li = lis[i];
+            li.style.display ='';
+    } 
+    }
+});
